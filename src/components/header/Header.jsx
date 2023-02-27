@@ -47,7 +47,7 @@ const Header = ({ user }) => {
     };
 
     CheckLogin();
-  }, []);
+  }, [setAuthentication, setUser, win]);
 
   const logout = () => {
     win.setItem("token", "");

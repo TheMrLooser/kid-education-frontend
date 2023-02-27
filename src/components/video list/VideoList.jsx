@@ -59,7 +59,7 @@ const VideoList = ({ id, player, videoName }) => {
       videoDetails.sort((a, b) => a.createdAt - b.createdAt);
     };
     sortData();
-  }, [id, listRef, storage]);
+  }, [id, listRef, storage, videoDetails]);
 
   return (
     <VideoSection player={player}>

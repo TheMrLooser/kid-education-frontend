@@ -47,7 +47,7 @@ const Cart = () => {
       }
       setTotalPrice(price);
     }
-  }, [course]);
+  }, [course, setCourseModalOpen]);
 
   return (
     <Container bgColor="#f7f7f7">

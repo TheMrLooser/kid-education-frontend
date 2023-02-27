@@ -38,8 +38,6 @@ const Home = () => {
     }
   }, [isAuthenticated, setAuthentication, setLoading]);
 
-  console.log(popularCourses);
-
   return (
     <Box>
       <GlobalStyles />

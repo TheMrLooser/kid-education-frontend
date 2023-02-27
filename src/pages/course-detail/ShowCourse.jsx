@@ -138,7 +138,7 @@ const ShowCourse = () => {
       );
       setCartAdded(added.length === 0 ? false : true);
     };
-  }, [id, cartAdded]);
+  }, [id, cartAdded, courseModalData.id]);
 
   return (
     <Container>

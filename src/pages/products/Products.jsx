@@ -27,7 +27,6 @@ const Products = () => {
     const getData = async () => {
       const res = await GetAllCategory();
       setCategory(res.data.courses);
-      console.log(category);
     };
     getData();
   }, []);

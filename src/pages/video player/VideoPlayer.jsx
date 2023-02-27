@@ -47,7 +47,7 @@ const VideoPlayer = () => {
     } else {
       setRatingModalOpen(false);
     }
-  }, []);
+  }, [setRatingModalOpen]);
 
   return (
     <Container>
