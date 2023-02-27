@@ -1,7 +1,7 @@
 import { CloseOutlined } from "@mui/icons-material";
-import { Alert, CircularProgress, Skeleton, Snackbar } from "@mui/material";
+import { Alert, Skeleton, Snackbar } from "@mui/material";
 import moment from "moment";
-import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
+import React, { useContext, useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   AddToCartAPI,
@@ -12,21 +12,21 @@ import { Authentication, CourseModalContext } from "../../../App";
 import { GlobalStyles } from "../../CommonStyles";
 
 import {
-  Box,
-  ModalWrap,
-  StyledTitle,
-  StyledAuthor,
-  Wrapper,
-  Break,
-  UpdatedDate,
-  Desc,
-  CancelIconStyle,
-  ButtonSection,
   AddToCart,
+  Box,
+  Break,
+  ButtonSection,
   BuyNow,
+  CancelIconStyle,
+  CourseImage,
+  Desc,
   Description,
   ImageSection,
-  CourseImage,
+  ModalWrap,
+  StyledAuthor,
+  StyledTitle,
+  UpdatedDate,
+  Wrapper,
 } from "./CourseModal.styles";
 
 const CourseModal = () => {

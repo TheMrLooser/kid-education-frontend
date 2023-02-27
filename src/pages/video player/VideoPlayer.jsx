@@ -1,13 +1,14 @@
+import { getDownloadURL, getStorage, ref } from "firebase/storage";
 import React, { useContext, useEffect, useState } from "react";
+import Pulse from "react-reveal/Pulse";
 import { useParams } from "react-router-dom";
-import {
-  Container,
-  GlobalStyles,
-  SectionDesc,
-} from "../../components/CommonStyles";
+import { RatingModal } from "../../App";
+import { Container, GlobalStyles } from "../../components/CommonStyles";
+import Header from "../../components/header/Header";
 import VideoFrame from "../../components/video frame/VideoFrame";
 import VideoList from "../../components/video list/VideoList";
-import Header from "../../components/header/Header";
+import { app } from "../../firebaseConfig";
+import { SectionHeading } from "../course-detail/ShowCourse.styles";
 import {
   ChooseDesc,
   CoursePlayer,
@@ -17,11 +18,6 @@ import {
   VideoWrap,
   Wrapper,
 } from "./VideoPlayer.styles";
-import { SectionHeading } from "../course-detail/ShowCourse.styles";
-import { app } from "../../firebaseConfig";
-import { getDownloadURL, getStorage, ref } from "firebase/storage";
-import { RatingModal } from "../../App";
-import Pulse from "react-reveal/Pulse";
 
 const VideoPlayer = () => {
   const { id, vidname } = useParams();
@@ -34,7 +30,7 @@ const VideoPlayer = () => {
     getDownloadURL(ref(storage, `courses/${id}/${vidname}`)).then((url) => {
       setVideoURL(url);
     });
-  }, [id, vidname]);
+  }, [id, storage, vidname]);
 
   useEffect(() => {
     const itemStr = localStorage.getItem("rating-later");

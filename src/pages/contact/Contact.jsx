@@ -1,12 +1,11 @@
 import { CallMade } from "@mui/icons-material";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Container,
   Error,
   GlobalStyles,
   InputLabel,
   InputSection,
-  PhoneError,
 } from "../../components/CommonStyles";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
@@ -22,13 +21,13 @@ import {
 } from "./Contact.styles";
 
 import { yupResolver } from "@hookform/resolvers/yup";
+import { Alert, Snackbar } from "@mui/material";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import Pulse from "react-reveal/Pulse";
-import { contactSchema } from "./contactSchema";
 import { SendMail } from "../../API/api";
 import { Authentication } from "../../App";
-import { useContext } from "react";
-import { Alert, Snackbar } from "@mui/material";
+import { contactSchema } from "./contactSchema";
 
 const Contact = () => {
   const { User } = useContext(Authentication);

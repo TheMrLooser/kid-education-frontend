@@ -1,47 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { Container, GlobalStyles } from "../../../components/CommonStyles";
-import Header from "../../../components/header/Header";
-import {
-  TableWrap,
-  TabStyles,
-  TabPanelStyles,
-  Wrapper,
-  GridWrap,
-  ChartWrap,
-  PanelWrapper,
-  AddCourseButton,
-  ButtonSection,
-  ActionGroup,
-  ViewButton,
-  DeleteButton,
-  editStyles,
-  deleteStyles,
-  videoLibraryStyles,
-  ProgressWrap,
-} from "./Admin.styles";
-import {
-  Box,
-  Tab,
-  Modal,
-  Button,
-  Alert,
-  Collapse,
-  CircularProgress,
-} from "@mui/material";
-import IconButton from "@mui/material/IconButton";
+import { AddCircle, Delete, Edit, VideoLibrary } from "@mui/icons-material";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
-import AddCourse from "../../../components/modal/add-course/AddCourse";
-import Chart from "../../../components/chart/Chart";
-import InfoTable from "../../../components/table/InfoTable";
 import {
-  Add,
-  AddCircle,
-  Delete,
-  Edit,
-  VideoLibrary,
-} from "@mui/icons-material";
+  Alert,
+  Box,
+  Button,
+  CircularProgress,
+  Collapse,
+  Modal,
+  Tab,
+} from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import React, { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
   DeleteCourseAPI,
@@ -49,7 +20,24 @@ import {
   GetAllUsersAPI,
   GetAllVideoAPI,
 } from "../../../API/api";
-import { userCols, courseCols, videoCols } from "../tablesColumns";
+import Chart from "../../../components/chart/Chart";
+import { Container, GlobalStyles } from "../../../components/CommonStyles";
+import Header from "../../../components/header/Header";
+import InfoTable from "../../../components/table/InfoTable";
+import { courseCols, userCols, videoCols } from "../tablesColumns";
+import {
+  ActionGroup,
+  AddCourseButton,
+  ButtonSection,
+  deleteStyles,
+  editStyles,
+  ProgressWrap,
+  TableWrap,
+  TabPanelStyles,
+  TabStyles,
+  videoLibraryStyles,
+  Wrapper,
+} from "./Admin.styles";
 
 const style = {
   position: "absolute",

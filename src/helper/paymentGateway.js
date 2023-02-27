@@ -1,9 +1,5 @@
 import axios from "axios";
-import {
-  AddToCartAPI,
-  BuyNewCourseAPI,
-  RemoveCourseFromCartAPI,
-} from "../API/api";
+import { BuyNewCourseAPI, RemoveCourseFromCartAPI } from "../API/api";
 
 export const checkoutHandler = async (
   amount,
@@ -19,14 +15,14 @@ export const checkoutHandler = async (
 
   const BuyCourse = async () => {
     for (var i = 0; i < course.length; i++) {
-      const res = await BuyNewCourseAPI(course[i], User.id);
+      await BuyNewCourseAPI(course[i], User.id);
       await RemoveCourseFromCartAPI(course[i].courseId);
     }
     setCongratsModalOpen(true);
   };
 
   const getData = async (paymentId, orderId) => {
-    const res = await axios.post(
+    await axios.post(
       "https://kid-project.onrender.com/payment/payment-call-back",
       {
         amount,

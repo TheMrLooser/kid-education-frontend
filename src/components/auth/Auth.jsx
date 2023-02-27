@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { Authentication } from "../../App";
 import {
@@ -10,7 +9,6 @@ import {
   InputField,
   InputLabel,
   InputSection,
-  PhoneError,
 } from "../CommonStyles";
 import Loader from "../loader/loader";
 import {
@@ -29,9 +27,9 @@ import {
 } from "./Auth.styles";
 
 const Auth = ({ method, register, handleSubmit, onSubmit, errors }) => {
-  const CheckAuthStatus = useContext(Authentication)
-  
-  return ( 
+  const CheckAuthStatus = useContext(Authentication);
+
+  return (
     <Container>
       <Wrapper>
         <GlobalStyles />
@@ -84,13 +82,25 @@ const Auth = ({ method, register, handleSubmit, onSubmit, errors }) => {
                 </InputSection>
               </CredentialDetails>
               <FormButton method={method} type="submit">
-                {method === "signup" ? (CheckAuthStatus.isLoading && !CheckAuthStatus.isAuthenticated)? <Loader/> : "Sign up" : (CheckAuthStatus.isLoading && !CheckAuthStatus.isAuthenticated)? <Loader/> : "Login"}
+                {method === "signup" ? (
+                  CheckAuthStatus.isLoading &&
+                  !CheckAuthStatus.isAuthenticated ? (
+                    <Loader />
+                  ) : (
+                    "Sign up"
+                  )
+                ) : CheckAuthStatus.isLoading &&
+                  !CheckAuthStatus.isAuthenticated ? (
+                  <Loader />
+                ) : (
+                  "Login"
+                )}
               </FormButton>
               <NoticeSection>
                 <Notice>
                   {method === "signup"
                     ? "Already have an account? "
-                    : "Don't have an account? "} 
+                    : "Don't have an account? "}
                   <Break>
                     {method === "signup" ? (
                       <Link to="/login">Login</Link>

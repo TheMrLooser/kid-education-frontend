@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import { SearchCourse } from "../../API/api";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { SearchButton, SearchField, SearchSection } from "./SearchBox.styles";
 
 const SearchBox = ({ isSearch }) => {

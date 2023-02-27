@@ -10,11 +10,10 @@ import {
   TextAreaSection,
 } from "../../../pages/contact/Contact.styles";
 import {
-  GlobalStyles,
-  SectionHeading,
-  InputSection,
   Error,
   FormButton,
+  GlobalStyles,
+  InputSection,
 } from "../../CommonStyles";
 import {
   AddCourseHeading,
@@ -24,7 +23,6 @@ import {
   Heading,
   Wrapper,
 } from "./AddCourse.styles";
-import { courseSchema } from "./courseSchema";
 
 const AddCourse = () => {
   const {

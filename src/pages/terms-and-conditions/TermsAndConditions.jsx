@@ -1,18 +1,14 @@
 import React from "react";
 import AnimatedText from "react-animated-text-content";
-import {
-  Container,
-  GlobalStyles,
-  SectionHeading,
-} from "../../components/CommonStyles";
+import { Container, GlobalStyles } from "../../components/CommonStyles";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import {
-  Wrapper,
-  StyledSectionHeading,
-  TermsWrap,
   Points,
   StyledSectionDesc,
+  StyledSectionHeading,
+  TermsWrap,
+  Wrapper,
 } from "./TermsAndConditions.styles";
 
 const TermsAndConditions = () => {

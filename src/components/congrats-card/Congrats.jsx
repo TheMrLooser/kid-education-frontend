@@ -1,6 +1,6 @@
 import { Close } from "@mui/icons-material";
-import { Box, Dialog, Modal } from "@mui/material";
-import React, { useState } from "react";
+import { Dialog } from "@mui/material";
+import React from "react";
 import {
   closeStyle,
   CongratsImage,

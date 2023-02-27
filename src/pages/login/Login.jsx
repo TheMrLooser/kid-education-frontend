@@ -9,7 +9,7 @@ import { Authentication } from "../../App";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { setLoading, isLoading, setAuthentication, isAuthenticated, setUser } =
+  const { setLoading, setAuthentication, isAuthenticated, setUser } =
     useContext(Authentication);
   const navigate = useNavigate();
   const win = window.localStorage;

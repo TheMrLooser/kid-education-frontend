@@ -1,6 +1,6 @@
 import React from "react";
 import AnimatedText from "react-animated-text-content";
-import { Container, SectionHeading } from "../../../components/CommonStyles";
+import { Container } from "../../../components/CommonStyles";
 import Footer from "../../../components/footer/Footer";
 import Header from "../../../components/header/Header";
 import { GalleryGrid, GalleryImage, Wrapper } from "./Gallery.styles";

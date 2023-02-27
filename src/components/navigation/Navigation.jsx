@@ -2,25 +2,19 @@ import {
   Contacts,
   ExpandMore,
   Home,
-  HomeRepairService,
   Info,
   Inventory,
-  LocalLibrary,
 } from "@mui/icons-material";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import React, { useContext, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { SidebarContext } from "../../App";
-import { Line } from "../../pages/cart/Cart.styles";
 import {
-  AboutSection,
-  AboutWrap,
   AccordionStyles,
   LinkSection,
   LinkWrap,
   List,
-  ListSection,
   ListWrap,
   MediaLink,
   MediaLinkSection,
@@ -28,7 +22,6 @@ import {
   MyCourseLink,
   MyCourseSection,
   NavigationSection,
-  useStyles,
 } from "./Navigation.styles";
 
 const Navigation = ({ direction, visible }) => {

@@ -12,8 +12,6 @@ import {
   Image,
   LeftSection,
   Price,
-  Rating,
-  RatingSection,
   Updated,
   Wrapper,
 } from "./Recommend.styles";

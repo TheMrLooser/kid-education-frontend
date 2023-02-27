@@ -1,13 +1,11 @@
 import { CircularProgress } from "@mui/material";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { GetAllBuyedCourses } from "../../API/api";
-import { Authentication } from "../../App";
 import { Container, SpinnerSection } from "../../components/CommonStyles";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import { CartHeading } from "../cart/Cart.styles";
-import { Spinner } from "../search/Search.styles";
 import {
   AuthorName,
   CardWrap,

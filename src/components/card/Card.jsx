@@ -1,4 +1,7 @@
+import { Skeleton } from "@mui/material";
+import Rating from "@mui/material/Rating";
 import React from "react";
+import { RemoveCourseFromCartAPI } from "../../API/api";
 import { Cards, CourseImage, GlobalStyles } from "../CommonStyles";
 import {
   Author,
@@ -16,9 +19,6 @@ import {
   Title,
   Wrapper,
 } from "./Card.styles";
-import Rating from "@mui/material/Rating";
-import { Skeleton } from "@mui/material";
-import { RemoveCourseFromCartAPI } from "../../API/api";
 
 const Card = ({
   title,

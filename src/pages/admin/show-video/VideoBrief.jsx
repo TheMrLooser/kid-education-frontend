@@ -1,31 +1,5 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
-import {
-  getStorage,
-  ref,
-  listAll,
-  getDownloadURL,
-  uploadBytesResumable,
-  getMetadata,
-  deleteObject,
-} from "firebase/storage";
-import { app } from "../../../firebaseConfig";
-import { Button, List, Upload } from "antd";
-import {
-  DeleteSelect,
-  UploadVideoSection,
-  VideoDetails,
-  VideoList,
-  Wrapper,
-} from "./VideoBrief.styles";
-import {
-  ButtonWrap,
-  Cancel,
-  Heading,
-  SectionTitle,
-  UploadVideo,
-  VideoSection,
-  VideoWrap,
-} from "../course-edit/EditCourse.styles";
+import { ArrowCircleLeftOutlined, Delete } from "@mui/icons-material";
+import { TabContext, TabList, TabPanel } from "@mui/lab";
 import {
   Alert,
   Box,
@@ -34,35 +8,46 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-  Modal,
   Snackbar,
   Tab,
 } from "@mui/material";
+import { Button, Upload } from "antd";
 import {
-  Link,
-  useLocation,
-  useParams,
-  useSearchParams,
-} from "react-router-dom";
+  deleteObject,
+  getDownloadURL,
+  getMetadata,
+  getStorage,
+  listAll,
+  ref,
+  uploadBytesResumable,
+} from "firebase/storage";
+import React, { useLayoutEffect, useState } from "react";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { UploadVideoAPI } from "../../../API/api";
-import { TabContext, TabList, TabPanel } from "@mui/lab";
+import { GlobalStyles } from "../../../components/CommonStyles";
+import InfoTable from "../../../components/table/InfoTable";
+import { app } from "../../../firebaseConfig";
+import {
+  ButtonWrap,
+  Cancel,
+  Heading,
+  UploadVideo,
+  VideoSection,
+  VideoWrap,
+} from "../course-edit/EditCourse.styles";
 import {
   ActionGroup,
   deleteStyles,
-  editStyles,
   TableWrap,
   TabPanelStyles,
   TabStyles,
 } from "../dashboard/Admin.styles";
-import { ArrowCircleLeftOutlined, Delete, Edit } from "@mui/icons-material";
-import InfoTable from "../../../components/table/InfoTable";
+import { DeleteSelect, UploadVideoSection, Wrapper } from "./VideoBrief.styles";
 import { vidCols } from "./videoTable";
-import { GlobalStyles } from "../../../components/CommonStyles";
 
 const VideoBrief = () => {
   const [videoDetails, setVideoDetails] = useState([]);
   const [videos, setVideos] = useState([]);
-  const [videoproce, setVideProce] = useState(0);
   const [isDeleted, setDeleted] = useState(false);
   const [selectDeleteVideo, setDeleteVideo] = useState("");
   const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
@@ -126,7 +111,7 @@ const VideoBrief = () => {
         });
     };
     getVideos();
-  }, [id, isDeleted]);
+  }, [id, isDeleted, listRef, storage]);
 
   let sortedVideoList = [];
 
@@ -152,9 +137,6 @@ const VideoBrief = () => {
     uploadTask.on(
       "state_changed",
       (snapshot) => {
-        const progress =
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        setVideProce(Math.round(progress));
         setAlert("success", `Video uploading...`, true);
         switch (snapshot.state) {
           case "paused":

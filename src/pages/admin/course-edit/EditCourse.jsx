@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Container,
   GlobalStyles,
@@ -7,42 +7,36 @@ import {
   SelectInput,
 } from "../../../components/CommonStyles";
 
-import {
-  StyledInputField,
-  TextAreaField,
-  TextAreaSection,
-} from "../../contact/Contact.styles";
-import {
-  DescWrap,
-  PhotoSection,
-  ImageWrap,
-  LeftSection,
-  RightSection,
-  SectionTitle,
-  TagsWrap,
-  Wrapper,
-  ButtonSection,
-  ButtonWrap,
-  Discard,
-  AddProduct,
-  CourseWrap,
-  Heading,
-  StyledFileInputField,
-  EditorSection,
-} from "./EditCourse.styles";
-import { Button, Upload } from "antd";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { ArrowCircleLeftOutlined } from "@mui/icons-material";
 import { Alert, Snackbar } from "@mui/material";
+import JoditEditor from "jodit-react";
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { courseSchema } from "../../../components/modal/add-course/courseSchema";
 import { Link, useLocation } from "react-router-dom";
 import {
   AddNewCourseAPI,
   GetSingleCourseAPI,
   UpdateCourseAPI,
 } from "../../../API/api";
-import JoditEditor from "jodit-react";
+import { courseSchema } from "../../../components/modal/add-course/courseSchema";
+import { StyledInputField } from "../../contact/Contact.styles";
+import {
+  AddProduct,
+  ButtonSection,
+  ButtonWrap,
+  CourseWrap,
+  DescWrap,
+  Discard,
+  EditorSection,
+  Heading,
+  LeftSection,
+  PhotoSection,
+  RightSection,
+  SectionTitle,
+  StyledFileInputField,
+  TagsWrap,
+  Wrapper,
+} from "./EditCourse.styles";
 
 const EditCourse = () => {
   const { search } = useLocation();
@@ -71,7 +65,7 @@ const EditCourse = () => {
 
   useEffect(() => {
     const query = window.location.search.replace("?", "").split("&");
-    if (query[0] == "update=true") {
+    if (query[0] === "update=true") {
       setUpdate(true);
       const id = query[1].replace("id=", "");
       setCourseID(id);
@@ -114,12 +108,10 @@ const EditCourse = () => {
     reader.readAsDataURL(file);
   };
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm({ mode: "all", resolver: yupResolver(courseSchema) });
+  const { handleSubmit, reset } = useForm({
+    mode: "all",
+    resolver: yupResolver(courseSchema),
+  });
 
   const onSubmit = (d) => {
     alert(JSON.stringify(d));

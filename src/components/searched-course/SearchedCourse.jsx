@@ -13,8 +13,6 @@ import {
   CourseSubTitle,
   DetailSection,
   ImageSection,
-  PartOne,
-  PartTwo,
   Price,
   Wrapper,
 } from "./SearchedCourse.styles";

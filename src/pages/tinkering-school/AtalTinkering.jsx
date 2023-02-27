@@ -23,9 +23,7 @@ import {
   GroupSection,
   Heading,
   Image,
-  ImageSlider,
   MediaImages,
-  MediaSection,
   MediaVideos,
   Package,
   PackageGroup,
@@ -42,11 +40,7 @@ import {
 } from "./AtalTinkering.styles";
 import { packages, services } from "./data";
 import { atalImages } from "./images";
-import {
-  ImageSliderSettings,
-  settings,
-  VideoSliderSettings,
-} from "./sliderSettings";
+import { ImageSliderSettings, VideoSliderSettings } from "./sliderSettings";
 import { atalVideos } from "./videos";
 
 const AtalTinkering = () => {

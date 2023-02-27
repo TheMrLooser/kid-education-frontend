@@ -1,11 +1,16 @@
-import React, { useContext, useEffect } from "react";
-import { Container, GlobalStyles, iconStyles } from "../CommonStyles";
 import {
   AccountCircle,
   ExitToApp,
   Menu,
   ShoppingCartOutlined,
 } from "@mui/icons-material";
+import { Badge } from "@mui/material";
+import React, { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { GetSingleUser } from "../../API/api";
+import { Authentication, SidebarContext } from "../../App";
+import { Container, GlobalStyles, iconStyles } from "../CommonStyles";
+import Navigation from "../navigation/Navigation";
 import {
   AccountStyles,
   AdminHeading,
@@ -21,11 +26,6 @@ import {
   UserSection,
   Wrapper,
 } from "./Header.styles";
-import Navigation from "../navigation/Navigation";
-import { Link, useNavigate } from "react-router-dom";
-import { Authentication, SidebarContext } from "../../App";
-import { GetSingleUser } from "../../API/api";
-import { Badge } from "@mui/material";
 
 const Header = ({ user }) => {
   const { setSidebarOpen } = useContext(SidebarContext);

@@ -1,6 +1,7 @@
+import { EmailOutlined, Facebook, Instagram, Phone } from "@mui/icons-material";
 import React from "react";
-import { Container, GlobalStyles } from "../CommonStyles";
 import { Link } from "react-router-dom";
+import { GlobalStyles } from "../CommonStyles";
 import {
   Box,
   CopyRightHeading,
@@ -24,13 +25,6 @@ import {
   SocialMedias,
   Wrapper,
 } from "./Footer.styles";
-import {
-  EmailOutlined,
-  Facebook,
-  Instagram,
-  Phone,
-  Twitter,
-} from "@mui/icons-material";
 
 const Footer = () => {
   return (

@@ -1,12 +1,6 @@
-import { Alert, Collapse, IconButton, Snackbar } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  BuyNewCourseAPI,
-  GetAllCourseCartAPI,
-  GetAllCoursesAddedInCartAPI,
-  RemoveCourseFromCartAPI,
-} from "../../API/api";
+import { GetAllCourseCartAPI } from "../../API/api";
 import { Authentication, CourseModalContext } from "../../App";
 import Card from "../../components/card/Card";
 import { Container } from "../../components/CommonStyles";
@@ -27,31 +21,10 @@ import {
 } from "./Cart.styles";
 
 const Cart = () => {
-  const [alertOpen, setAlertOpen] = useState(false);
-  const [alertText, setAlertText] = useState("Somthing");
-  const [alertType, setAlertType] = useState("success");
-
-  const setAlert = (type, text, status) => {
-    setAlertType(type);
-    setAlertText(text);
-    setAlertOpen(status);
-  };
-
-  const handleClose = () => {
-    setAlertOpen(false);
-  };
-
-  if (alertOpen) {
-    setTimeout(() => {
-      setAlertOpen(false);
-    }, 10000);
-  }
-
   const { User } = useContext(Authentication);
   const { setCourseModalOpen } = useContext(CourseModalContext);
   const [course, setCourse] = useState(null);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [coursesId, setCoursesId] = useState([]);
 
   useEffect(() => {
     const calculateAmnt = async () => {
@@ -72,7 +45,6 @@ const Cart = () => {
         price = price + course[i].price;
         i++;
       }
-      setCoursesId(ids);
       setTotalPrice(price);
     }
   }, [course]);
@@ -83,20 +55,7 @@ const Cart = () => {
       <Wrapper>
         <LeftSection>
           <CartHeading>Shopping Cart:</CartHeading>
-          <Snackbar
-            open={alertOpen}
-            autoHideDuration={6000}
-            anchorOrigin={{ vertical: "top", horizontal: "center" }}
-            onClose={handleClose}
-          >
-            <Alert
-              severity={alertType}
-              sx={{ width: "100%" }}
-              onClose={handleClose}
-            >
-              {alertText}
-            </Alert>
-          </Snackbar>
+
           <CourseListing>
             {course &&
               course.map((items, index) => {

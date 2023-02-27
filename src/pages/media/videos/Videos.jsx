@@ -1,4 +1,3 @@
-import { PlayCircle } from "@mui/icons-material";
 import { CircularProgress } from "@mui/material";
 import {
   getDownloadURL,
@@ -7,13 +6,11 @@ import {
   listAll,
   ref,
 } from "firebase/storage";
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AnimatedText from "react-animated-text-content";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { GetPopularCourseAPI } from "../../../API/api";
-import { Container, SectionHeading } from "../../../components/CommonStyles";
+import { Container } from "../../../components/CommonStyles";
 import Footer from "../../../components/footer/Footer";
 import Header from "../../../components/header/Header";
 import { app } from "../../../firebaseConfig";

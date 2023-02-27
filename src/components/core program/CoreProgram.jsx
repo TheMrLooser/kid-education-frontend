@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { Container, GlobalStyles, SectionHeading } from "../CommonStyles";
+import { Container, SectionHeading } from "../CommonStyles";
 import {
   AgeDescription,
   AgeTitle,
   CardSection,
-  DetailWrap,
   LearnMore,
   ProgramCard,
   ProgramDetails,

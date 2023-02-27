@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "../CommonStyles";
 import {
-  Desc,
   Heading,
   ProsDesc,
   ProsDetailSection,
@@ -10,7 +9,6 @@ import {
   ProsSection,
   ProsTitle,
   ProsWrap,
-  SubHeading,
   Wrapper,
 } from "./Pros.styles";
 import { pros } from "./prosData";

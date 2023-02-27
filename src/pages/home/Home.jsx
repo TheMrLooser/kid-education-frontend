@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { GetPopularCourseAPI } from "../../API/api";
 import { Authentication } from "../../App";
 import { GlobalStyles } from "../../components/CommonStyles";
@@ -11,7 +10,6 @@ import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import Pros from "../../components/pros-section/Pros";
 import Carousel from "../../components/slider/Carousel";
-import { coursesData } from "./course";
 import { Box, Wrapper } from "./Home.styles";
 
 const Home = () => {

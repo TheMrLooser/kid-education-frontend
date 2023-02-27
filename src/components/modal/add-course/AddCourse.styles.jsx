@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { Line } from "../../../pages/cart/Cart.styles";
-import { Container, FormButton } from "../../CommonStyles";
+import { Container } from "../../CommonStyles";
 
 export const Box = styled(Container)`
   width: 100vw;

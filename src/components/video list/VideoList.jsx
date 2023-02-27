@@ -8,7 +8,7 @@ import {
   ref,
 } from "firebase/storage";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { app } from "../../firebaseConfig";
 import { videoIconStyles, VideoName, VideoSection } from "./VideoList.styles";
 
@@ -59,9 +59,7 @@ const VideoList = ({ id, player, videoName }) => {
       videoDetails.sort((a, b) => a.createdAt - b.createdAt);
     };
     sortData();
-  }, [id]);
-
-  const navigate = useNavigate();
+  }, [id, listRef, storage]);
 
   return (
     <VideoSection player={player}>

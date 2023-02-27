@@ -6,10 +6,10 @@ import {
   DialogTitle,
   Rating,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import { AverageRating, Wrapper } from "./CourseRating.styles";
-import { PostRatingAPI } from "../../API/api";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { PostRatingAPI } from "../../API/api";
+import { AverageRating, Wrapper } from "./CourseRating.styles";
 
 const CourseRating = ({ open, setClose }) => {
   const { pathname } = useLocation();
