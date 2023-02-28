@@ -20,8 +20,8 @@ const Pros = () => {
         <Heading>Ignite Your Love for Learning with STEAM AI LAB!</Heading>
 
         <ProsSection>
-          {pros.map((data) => (
-            <ProsWrap>
+          {pros.map((data, index) => (
+            <ProsWrap key={index}>
               <ProsImageSection>
                 <ProsImage src={data.img} />
               </ProsImageSection>
