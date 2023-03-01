@@ -24,7 +24,7 @@ import {
   NavigationSection,
 } from "./Navigation.styles";
 
-const Navigation = ({ direction, visible }) => {
+const Navigation = ({ direction, visible , user }) => {
   const { setSidebarOpen } = useContext(SidebarContext);
   const [expanded, setExpanded] = useState(false);
 
@@ -163,6 +163,16 @@ const Navigation = ({ direction, visible }) => {
           STORE
         </LinkSection>
       </NavLink>
+      {
+        user?.role === "Admin" ?
+      <NavLink to={"/admin"} onClick={closeSideBar}>
+        <LinkSection>
+          <Contacts />
+          DASHBOARD
+        </LinkSection>
+      </NavLink>
+      :null
+      }
     </NavigationSection>
   );
 };

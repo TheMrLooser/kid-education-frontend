@@ -20,7 +20,7 @@ const Home = () => {
 
   const storage = getStorage(app);
   window.scrollTo(0, 0);
-  const { setLoading, setAuthentication, isAuthenticated } =
+  const { setLoading, setAuthentication, isAuthenticated, User } =
     useContext(Authentication);
 
   const CTAHeading =
@@ -48,10 +48,11 @@ const Home = () => {
     }
   }, [isAuthenticated, setAuthentication, setLoading]);
 
+
   return (
     <Box>
       <GlobalStyles />
-      <Header />
+      <Header user={User}/>
       <Wrapper>
         <Carousel video={video} />
         <Pros />
