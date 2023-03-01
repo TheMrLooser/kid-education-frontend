@@ -107,7 +107,9 @@ const ShowCourse = () => {
   useEffect(() => {
     const getCoursesByAuthor = async () => {
       const res = await GetCoursesByAuthor(id);
-      setCoursesByAuthor(res.data.courses);
+      if(!res.data.courses){
+        setCoursesByAuthor(res.data.courses);
+      }
     };
     getCoursesByAuthor();
   }, [id]);
@@ -322,21 +324,29 @@ const ShowCourse = () => {
             <SectionHeading>Course content</SectionHeading>
             <VideoList id={id} />
           </CourseSection>
+          {
+            coursesByAuthor?
           <Section>
             <SectionHeading>Related Courses</SectionHeading>
             <RecommendationSection>
               <Recommend details={true} />
             </RecommendationSection>
           </Section>
+          :null
+          }
         </DetailSection>
-
+        
+        {
+          coursesByAuthor ? 
         <Section>
           <Course
             heading={`More Courses by "${course?.auther}"`}
             catagory={"development"}
-            coursesByAuthor={coursesByAuthor && coursesByAuthor}
+            coursesByAuthor={coursesByAuthor}
           />
         </Section>
+        :null
+        }
       </Wrapper>
       <Footer />
     </Container>

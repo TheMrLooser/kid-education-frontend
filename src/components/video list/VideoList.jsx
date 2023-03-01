@@ -54,7 +54,7 @@ const VideoList = ({ id, player, videoName }) => {
       videoDetails.sort((a, b) => a.createdAt - b.createdAt);
     };
     sortData();
-  }, [id, listRef, storage, videoDetails]);
+  }, [id]);
 
   return (
     <VideoSection player={player}>

@@ -58,7 +58,7 @@ const Header = ({ user }) => {
     <Container>
       <GlobalStyles />
       <Wrapper>
-        {user !== "admin" ? (
+        {user !== "Admin" ? (
           <>
             <LogoSection>
               <MenuSection>

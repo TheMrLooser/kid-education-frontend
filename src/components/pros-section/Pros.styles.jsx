@@ -3,7 +3,7 @@ import { SectionHeading } from "../CommonStyles";
 
 export const Wrapper = styled.div``;
 export const Heading = styled(SectionHeading)`
-  color: darkblue;
+  color: #D24916;
 `;
 export const SubHeading = styled.h1`
   font-size: 18px;

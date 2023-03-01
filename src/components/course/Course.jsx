@@ -33,6 +33,8 @@ const Course = ({ heading, catagory, popularCourses, coursesByAuthor }) => {
   }, [catagory]);
   const loaderNumber = [1, 2, 3, 4, 5, 6];
 
+ 
+
   return (
     <Container bgColor="transparent">
       <Wrapper>
@@ -67,7 +69,7 @@ const Course = ({ heading, catagory, popularCourses, coursesByAuthor }) => {
                   <CardSection onClick={() => sendData(course)} key={index}>
                     <Card
                       title={course.title}
-                      image={course.src}
+                      image={course.img}
                       author={course.auther}
                       rating={course.rating}
                       ratingCount={course.noOfRating}

@@ -27,7 +27,6 @@ export const CourseSlider = styled(Slider)`
   button {
     z-index: 999;
   }
-
   .slick-slide,
   .slick-track {
     overflow: visible;
@@ -52,16 +51,25 @@ export const CourseSlider = styled(Slider)`
 
   .slick-slide > div {
     margin: 0 10px;
+   
   }
   .slick-list {
-    margin: 0 -10px;
+    margin: 0 -80px;
   }
 `;
 
 export const CardSection = styled.div`
   width: 100%;
   max-width: 200px;
+  min-width: max-content;
   cursor: pointer;
+  border-radius: 8px;
+  transition: box-shadow 0.5s;
+  margin: 20px 0px;
+  padding: 5px;
+  &:hover{
+    box-shadow: 5px 5px 18px gray;
+  }
 
   @media (max-width: 600px) {
     max-width: 150px;
