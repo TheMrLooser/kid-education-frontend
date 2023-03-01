@@ -5,12 +5,12 @@ export const vidCols = [
   {
     field: "name",
     headerName: "Name",
-    width: "600",
+    width: 600,
   },
   {
     field: "link",
     headerName: "Link",
-    width: "120",
+    width: 120,
     renderCell: (params) => {
       return (
         <div>

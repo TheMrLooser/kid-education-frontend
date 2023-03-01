@@ -111,7 +111,7 @@ const VideoBrief = () => {
         });
     };
     getVideos();
-  }, [id, isDeleted, listRef, storage]);
+  }, [id, isDeleted]);
 
   let sortedVideoList = [];
 

@@ -12,6 +12,11 @@ export const Wrapper = styled.div`
   width: 100%;
   z-index: 0;
 `;
+export const CardContainer = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 10px;
+`;
 
 export const StyledSectionHeading = styled(SectionHeading)`
   font-size: 25px;
@@ -60,7 +65,7 @@ export const CourseSlider = styled(Slider)`
 
 export const CardSection = styled.div`
   width: 100%;
-  max-width: 300px;
+  max-width: 200px;
   min-width: 150px;
   cursor: pointer;
   border-radius: 8px;

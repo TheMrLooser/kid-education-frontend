@@ -59,7 +59,7 @@ const Home = () => {
         <CoreProgram />
         <Details />
         {popularCourses?.length !== 0 && (
-          <Course heading="Courses" popularCourses={popularCourses} />
+          <Course heading="Popular Courses" popularCourses={popularCourses} />
         )}
         <CTA CTAHeading={CTAHeading} CTACall={CTACall} />
         <Faq />
