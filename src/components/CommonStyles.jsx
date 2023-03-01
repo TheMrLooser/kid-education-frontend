@@ -177,7 +177,7 @@ export const InputField = styled.input`
   background: transparent;
   font-size: 15px;
   font-weight: 400;
-  border: 1px solid darkgray;
+  border: 1px solid #262626;
   padding: 5px 10px;
   font-family: "Poppins", sans-serif;
 `;

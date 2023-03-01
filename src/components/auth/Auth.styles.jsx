@@ -15,7 +15,7 @@ export const LoginWrap = styled.div`
   border-radius: 15px;
   overflow: hidden;
   box-shadow: -1px 2px 15px -10px rgba(0, 0, 0, 0.75);
-  background: white;
+  background: #87CEEB;
 
   @media (max-width: 768px) {
     width: min(400px, calc(100% - 20px));

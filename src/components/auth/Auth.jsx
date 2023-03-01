@@ -107,8 +107,14 @@ const Auth = ({ method, register, handleSubmit, onSubmit, errors }) => {
                     ) : (
                       <Link to="/signup">Sign up</Link>
                     )}
+
                   </Break>
+                  
                 </Notice>
+                <Break>
+                    Back to home ->
+                    <Link to="/">home</Link>
+                </Break>
               </NoticeSection>
             </LoginSection>
           </CredentialSection>
