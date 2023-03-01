@@ -34,7 +34,7 @@ const Course = ({ heading, catagory, popularCourses, coursesByAuthor }) => {
   }, [catagory]);
   const loaderNumber = [1, 2, 3, 4, 5, 6];
 
-
+console.log(popularCourses)
 
   return (
     <Container bgColor="transparent">
@@ -72,14 +72,14 @@ const Course = ({ heading, catagory, popularCourses, coursesByAuthor }) => {
                 return (
                   <CardSection onClick={() => sendData(course)} key={index}>
                     <Card
-                      title={course.title}
+                      title={course.courseName}
                       image={course.img}
                       author={course.auther}
                       rating={course.rating}
                       ratingCount={course.noOfRating}
                       price={course.price}
                     />
-                  </CardSection>
+                  </CardSection> 
                 );
               })}
 
@@ -141,7 +141,7 @@ const Course = ({ heading, catagory, popularCourses, coursesByAuthor }) => {
                 return (
                   <CardSection onClick={() => sendData(course)} key={index}>
                     <Card
-                      title={course.title}
+                      title={course.courseName}
                       image={course.img}
                       author={course.auther}
                       rating={course.rating}

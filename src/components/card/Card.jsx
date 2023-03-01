@@ -35,7 +35,7 @@ const Card = ({
   const RemoveCourse = async () => {
     await RemoveCourseFromCartAPI(courseId);
     window.location.reload();
-  };
+  }; 
 
   return (
     <Wrapper>
