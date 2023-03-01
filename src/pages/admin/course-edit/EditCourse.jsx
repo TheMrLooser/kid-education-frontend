@@ -31,6 +31,7 @@ import {
   Heading,
   LeftSection,
   PhotoSection,
+  PreviewImageWrap,
   RightSection,
   SectionTitle,
   StyledFileInputField,
@@ -79,7 +80,7 @@ const EditCourse = () => {
     getCourse();
   }, [courseID]);
 
-  const [imgFile, setImgFile] = useState("");
+  const [imgFile_url, setImgFile_url] = useState("");
   const [title, setTitle] = useState(null);
   const [subName, setSubName] = useState(null);
   const [desc, setDecs] = useState(null);
@@ -89,7 +90,7 @@ const EditCourse = () => {
   const [catagory, setCatagory] = useState(null);
 
   useEffect(() => {
-    setImgFile(course ? course.img : "");
+    setImgFile_url(course ? course.img : "");
     setTitle(course ? course.courseName : null);
     setSubName(course ? course.subName : null);
     setDecs(course ? course.description : null);
@@ -99,14 +100,7 @@ const EditCourse = () => {
     setCatagory(course ? course.catagory : null);
   }, [course]);
 
-  // converting img to base64
-  const buffringImg = (file) => {
-    const reader = new FileReader();
-    reader.addEventListener("load", () => {
-      setImgFile(reader.result);
-    });
-    reader.readAsDataURL(file);
-  };
+
 
   const { handleSubmit, reset } = useForm({
     mode: "all",
@@ -118,9 +112,36 @@ const EditCourse = () => {
     reset();
   };
 
+   // compresing image
+   const Compress = (e)=>{
+    const image_file = e.target.files[0]
+    const reader = new FileReader
+    reader.readAsDataURL(image_file)
+
+    reader.onload = (event) =>{
+      let img_url  = event.target.result
+      let image = document.createElement("img")
+      image.src = img_url
+
+      image.onload = (e)=>{
+
+        let canvas  =  document.createElement("canvas")
+        const WIDTH = 300
+        let ratio = WIDTH/e.target.width
+        canvas.width =  WIDTH
+        canvas.width = e.target.width*ratio
+        const context = canvas.getContext("2d")
+        context.drawImage(image,0,0,canvas.width,canvas.height)
+        const new_img_url = context.canvas.toDataURL("image/jpeg",90)
+        setImgFile_url(new_img_url)
+      }
+
+    }
+   }
+
   const AddCourse = async () => {
     const res = await AddNewCourseAPI(
-      imgFile,
+      imgFile_url,
       title,
       subName,
       desc.toString(),
@@ -129,7 +150,6 @@ const EditCourse = () => {
       auther,
       catagory
     );
-    console.log(res.data);
     if (res.data.error) {
       return setAlert("error", res.data.message, true);
     }
@@ -138,7 +158,7 @@ const EditCourse = () => {
 
   const updateCourse = async () => {
     const res = await UpdateCourseAPI(
-      imgFile,
+      imgFile_url,
       title,
       subName,
       desc.toString(),
@@ -266,11 +286,17 @@ const EditCourse = () => {
                   <StyledFileInputField
                     type="file"
                     onChange={(e) => {
-                      buffringImg(e.target.files[0]);
+                      Compress(e) 
                     }}
                     placeholder={course ? course.catagory : null}
                   />
                 </InputSection>
+                <PreviewImageWrap>
+                    {
+                      imgFile_url&&<img src={imgFile_url} width='30%'></img>
+                    }
+                </PreviewImageWrap>
+               
               </PhotoSection>
 
               <RightSection>

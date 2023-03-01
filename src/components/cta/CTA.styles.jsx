@@ -16,6 +16,7 @@ export const Wrapper = styled.div`
 export const CTATitle = styled(SectionHeading)`
   line-height: 1.4;
   margin: 0;
+  color: black;
 `;
 
 export const CTAButton = styled.button`
@@ -26,7 +27,7 @@ export const CTAButton = styled.button`
   border: none;
   font-size: 18px;
   font-weight: bold;
-  background-color: darkblue;
+  background-color: black;
   color: white;
   font-family: "Poppins", sans-serif;
   margin-inline: auto;

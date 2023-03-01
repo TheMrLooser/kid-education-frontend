@@ -4,7 +4,10 @@ import {
   Home,
   Info,
   Inventory,
+  
 } from "@mui/icons-material";
+import StoreMallDirectoryIcon from '@mui/icons-material/StoreMallDirectory';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import React, { useContext, useState } from "react";
@@ -159,7 +162,7 @@ const Navigation = ({ direction, visible , user }) => {
 
       <NavLink to={"/products"} onClick={closeSideBar}>
         <LinkSection>
-          <Contacts />
+          <StoreMallDirectoryIcon />
           STORE
         </LinkSection>
       </NavLink>
@@ -167,7 +170,7 @@ const Navigation = ({ direction, visible , user }) => {
         user?.role === "Admin" ?
       <NavLink to={"/admin"} onClick={closeSideBar}>
         <LinkSection>
-          <Contacts />
+          <DashboardIcon />
           DASHBOARD
         </LinkSection>
       </NavLink>

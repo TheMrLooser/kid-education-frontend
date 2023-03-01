@@ -40,7 +40,7 @@ export const AddCourseButton = styled.button`
   font-size: 16px;
   outline: none;
   border: none;
-  background-color: #0014ff;
+  background-color: #D24916;
   border-radius: 7px;
   color: white;
   display: flex;

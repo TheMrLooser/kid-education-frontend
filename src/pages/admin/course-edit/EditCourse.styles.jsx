@@ -64,6 +64,12 @@ export const PhotoSection = styled.div`
   grid-area: image;
 `;
 
+export const PreviewImageWrap = styled.div`
+padding: 10px 0px;
+width: 100%;
+min-height: fit-content;
+`;
+
 export const CourseImage = styled.img`
   width: 100%;
   height: 150px;
@@ -116,7 +122,7 @@ export const Discard = styled.button`
   cursor: pointer;
 `;
 export const AddProduct = styled(Discard)`
-  background-color: #0014ff;
+  background-color: #D24916;
   color: white;
   border: none;
 `;

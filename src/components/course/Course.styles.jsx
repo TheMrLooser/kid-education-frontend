@@ -60,8 +60,8 @@ export const CourseSlider = styled(Slider)`
 
 export const CardSection = styled.div`
   width: 100%;
-  max-width: 200px;
-  min-width: max-content;
+  max-width: 300px;
+  min-width: 150px;
   cursor: pointer;
   border-radius: 8px;
   transition: box-shadow 0.5s;
