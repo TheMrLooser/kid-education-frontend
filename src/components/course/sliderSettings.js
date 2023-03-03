@@ -10,6 +10,7 @@ export const settings = {
   slidesToShow: 6,
   slidesToScroll: 1,
   initialSlide: 0,
+  
   prevArrow: (
     <ArrowBackIosNewOutlined
       size="sm"

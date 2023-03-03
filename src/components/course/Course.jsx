@@ -32,7 +32,7 @@ const Course = ({ heading, catagory, popularCourses, coursesByAuthor }) => {
     };
     GetAllCourses();
   }, [catagory]);
-  const loaderNumber = [1, 2, 3, 4, 5, 6];
+  // const loaderNumber = [1, 2, 3, 4, 5, 6];
 
 
   return (
@@ -40,12 +40,12 @@ const Course = ({ heading, catagory, popularCourses, coursesByAuthor }) => {
       <Wrapper>
         <StyledSectionHeading>{heading}</StyledSectionHeading>
         {
-          (Courses.length||popularCourses?.length||coursesByAuthor?.length) > 8?
+          (Courses.length||popularCourses?.length||coursesByAuthor?.length) > 4?
        
         <SliderSection>
           <CourseSlider {...settings}>
             {Courses
-              ? Courses.map((course, index) => {
+              &&Courses.map((course, index) => {
                   return (
                     <CardSection onClick={() => sendData(course)} key={index}>
                       <Card
@@ -59,13 +59,8 @@ const Course = ({ heading, catagory, popularCourses, coursesByAuthor }) => {
                     </CardSection>
                   );
                 })
-              : loaderNumber.map((index) => {
-                  return (
-                    <CardSection key={index}>
-                      <Card key={index} loading={Courses ? false : true} />
-                    </CardSection>
-                  );
-                })}
+            }
+
             {popularCourses &&
               popularCourses.map((course, index) => {
                 return (
@@ -83,7 +78,7 @@ const Course = ({ heading, catagory, popularCourses, coursesByAuthor }) => {
               })}
 
             {coursesByAuthor
-              ? coursesByAuthor.map((course, index) => {
+              &&coursesByAuthor.map((course, index) => {
                   return (
                     <CardSection onClick={() => sendData(course)} key={index}>
                       <Card
@@ -97,13 +92,7 @@ const Course = ({ heading, catagory, popularCourses, coursesByAuthor }) => {
                     </CardSection>
                   );
                 }) 
-              : loaderNumber.map((index) => {
-                  return (
-                    <CardSection key={index}>
-                      <Card key={index} loading={Courses ? false : true} />
-                    </CardSection>
-                  );
-                })}
+              }
           </CourseSlider>
         </SliderSection>
 
@@ -112,7 +101,7 @@ const Course = ({ heading, catagory, popularCourses, coursesByAuthor }) => {
           {
 
         Courses
-              ? Courses.map((course, index) => {
+              && Courses.map((course, index) => {
                   return (
                     <CardSection onClick={() => sendData(course)} key={index}>
                       <Card 
@@ -126,13 +115,7 @@ const Course = ({ heading, catagory, popularCourses, coursesByAuthor }) => {
                     </CardSection>
                   );
                 })
-              : loaderNumber.map((index) => {
-                  return (
-                    <CardSection key={index}>
-                      <Card key={index} loading={Courses ? false : true} />
-                    </CardSection>
-                  );
-                })
+              
           }
            
           {popularCourses &&
@@ -170,6 +153,8 @@ const Course = ({ heading, catagory, popularCourses, coursesByAuthor }) => {
         </CardContainer>
 
       }
+
+     
       </Wrapper>
     </Container>
   );
