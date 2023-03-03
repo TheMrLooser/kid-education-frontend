@@ -15,11 +15,11 @@ export const Wrapper = styled.div`
 export const CardContainer = styled.div`
   width: 100%;
   display: flex;
-  gap: 10px;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
   @media only screen and (max-width:800px){
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
 
   }
 `;
@@ -29,7 +29,7 @@ export const StyledSectionHeading = styled(SectionHeading)`
 `;
 
 export const SliderSection = styled.div`
-  height: 250px;
+  height: 300px;
   position: relative;
   z-index: 0;
 `;
@@ -73,13 +73,15 @@ export const CardSection = styled.div`
   width: 100%;
   max-width: 250px;
   min-width: 150px;
+  height: 250px;
   cursor: pointer;
   border-radius: 8px;
   transition: box-shadow 0.5s;
   margin: 20px 0px;
   padding: 5px;
+  box-shadow: 5px 5px 18px gray;
   &:hover{
-    box-shadow: 5px 5px 18px gray;
+    box-shadow: none;
   }
 
   @media (max-width: 600px) {

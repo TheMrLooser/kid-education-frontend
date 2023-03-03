@@ -54,6 +54,7 @@ export const IntroWrap = styled.div`
   display: flex;
   justify-content: space-between;
   position: relative;
+  align-items: center;
 
   @media (max-width: 1130px) {
     flex-direction: column-reverse;
