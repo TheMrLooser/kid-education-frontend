@@ -40,7 +40,7 @@ const Course = ({ heading, catagory, popularCourses, coursesByAuthor }) => {
       <Wrapper>
         <StyledSectionHeading>{heading}</StyledSectionHeading>
         {
-          (Courses.length||popularCourses?.length||coursesByAuthor?.length) > 4?
+          (Courses.length||popularCourses?.length||coursesByAuthor?.length) > 5?
        
         <SliderSection>
           <CourseSlider {...settings}>

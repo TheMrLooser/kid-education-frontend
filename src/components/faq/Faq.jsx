@@ -8,7 +8,7 @@ import { SectionHeading } from "../CommonStyles";
 const Faq = () => {
   return (
     <Wrapper>
-      <SectionHeading>faq</SectionHeading>
+      <SectionHeading>FAQ</SectionHeading>
       <SubHeading>Questions? We Are Here to Help</SubHeading>
       {faqData.map((item, index) => (
         <Accordion sx={{ backgroundColor: "#F0EEED" }}>
