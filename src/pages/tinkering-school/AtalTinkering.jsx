@@ -1,4 +1,5 @@
-import React from "react";
+import { getDownloadURL, getStorage, listAll, ref } from "@firebase/storage";
+import React, { useEffect, useState } from "react";
 import AnimatedText from "react-animated-text-content";
 import CountUp from "react-countup";
 import {
@@ -11,6 +12,7 @@ import {
 } from "../../components/CommonStyles";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
+import { app } from "../../firebaseConfig";
 import {
   CardWrap,
   Colored,
@@ -41,9 +43,29 @@ import {
 import { packages, services } from "./data";
 import { atalImages } from "./images";
 import { ImageSliderSettings, VideoSliderSettings } from "./sliderSettings";
-import { atalVideos } from "./videos";
 
 const AtalTinkering = () => {
+  const [video, setVideo] = useState([]);
+  const storage = getStorage(app);
+
+  const listRef = ref(storage, `assets/ATAL`);
+
+  useEffect(() => {
+    listAll(listRef)
+      .then((res) => {
+        res.items.forEach(async (itemRef) => {
+          getDownloadURL(ref(storage, `assets/ATAL/${itemRef.name}`)).then(
+            async (url) => {
+              url && setVideo((prev) => [...prev, url]);
+            }
+          );
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <Container>
       <GlobalStyles />
@@ -141,7 +163,7 @@ const AtalTinkering = () => {
           <StyledDesc>
             Click on Enqire Now and fill the form to know more about ATL Labs.
           </StyledDesc>
-          <EnquireButton href="/atal-tinkering-school">
+          <EnquireButton href="https://forms.gle/dRqKUUawTRbyceni9">
             Enquire Now!
           </EnquireButton>
         </Section>
@@ -152,7 +174,7 @@ const AtalTinkering = () => {
           <StyledDesc>
             Fill the form to schedule a mentor session for ATL. Enquire Now!
           </StyledDesc>
-          <EnquireButton href="/atal-tinkering-school">
+          <EnquireButton href="https://forms.gle/zz8vNaRbGp6aePqX9">
             Enquire Now!
           </EnquireButton>
         </Section>
@@ -172,14 +194,14 @@ const AtalTinkering = () => {
         <Section>
           <SectionHeading>VIDEOS: ATAL TINKERING LAB</SectionHeading>
           <SectionSlider {...VideoSliderSettings}>
-            {atalVideos.map((videos, index) => (
+            {video?.map((videos, index) => (
               <MediaVideos
                 controls
                 controlsList="nodownload"
                 onContextMenu={(e) => e.preventDefault()}
                 key={index}
               >
-                <source src={videos.src} />
+                <source src={videos} />
               </MediaVideos>
             ))}
           </SectionSlider>

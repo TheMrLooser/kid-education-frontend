@@ -57,7 +57,7 @@ const Courses = () => {
           <BriefSection direction={changeDirection(index)} key={index}>
             <InfoColumn>
               <Fade right={FadeDirection(index)} left={!FadeDirection(index)}>
-                <Link to={`/courses/${item.title}`}>
+                <Link to={`/courses/${item.title}`} className="Link">
                   <SectionHeading>{item.title}</SectionHeading>
                 </Link>
                 <SectionDesc>{item.content}</SectionDesc>

@@ -10,7 +10,7 @@ export const vidCols = [
   {
     field: "link",
     headerName: "Link",
-    width: "120",
+    width: 120,
     renderCell: (params) => {
       return (
         <div>

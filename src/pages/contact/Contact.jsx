@@ -48,7 +48,7 @@ const Contact = () => {
   const onSubmitt = async (d) => {
     setAlertOpen(true);
     setAlertText("Sending...");
-    const res = await SendMail(d, User?.id);
+    const res = await SendMail(d);
 
     if (res.data !== "email sent") {
       setAlertType("error");

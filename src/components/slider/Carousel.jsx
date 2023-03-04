@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Pulse from "react-reveal/Pulse";
 import { carouselSettings } from "./carouselSettings";
 
-const Carousel = () => {
+const Carousel = ({ video }) => {
   return (
     <Pulse>
       <Container>
@@ -18,7 +18,7 @@ const Carousel = () => {
                 loop
                 muted
                 onContextMenu={(e) => e.preventDefault()}
-                src="/assets/Camera Roll/HOME/HOME VIDEO.mp4"
+                src={video}
               />
             </ImgWrap>
           </StyledSlider>

@@ -60,15 +60,20 @@ export const RegisterButton = styled.button`
   min-height: 40px;
   font-size: 16px;
   font-weight: 600;
-  color: #0014ff;
+  color: #D24916;
   cursor: pointer;
-  border: 2px solid #0014ff;
+  border: 2px solid #D24916;
   background: transparent;
   border-radius: 25px;
   outline: none;
   display: grid;
   place-items: center;
   font-family: "Poppins", sans-serif;
+  transition: background-color 0.5s , color 0.5s;
+  &:hover{
+    background-color:#D24916;
+    color: white;
+  }
 `;
 
 export const LoginButton = styled(RegisterButton)`
@@ -77,6 +82,10 @@ export const LoginButton = styled(RegisterButton)`
   border: none;
   border-radius: 0;
   color: black;
+  &:hover{
+    color:#D24916;
+    background-color: white;
+  }
 `;
 
 export const AuthWrap = styled.div`

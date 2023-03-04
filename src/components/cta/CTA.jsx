@@ -7,7 +7,7 @@ import Tada from "react-reveal/Tada";
 const CTA = ({ CTAHeading, CTACall, to }) => {
   return (
     <Tada>
-      <Container bgColor="#BCCEF8" borderRadius="20px">
+      <Container bgColor="skyblue" borderRadius="20px">
         <Wrapper>
           <CTATitle>{CTAHeading}</CTATitle>
           <Link to={to}>

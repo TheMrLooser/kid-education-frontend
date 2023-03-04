@@ -23,6 +23,7 @@ export const DetailSection = styled.div`
 export const CourseDetails = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 10px;
 `;
 
 export const ImageSection = styled.div`
@@ -40,7 +41,7 @@ export const ImageSection = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: ${(props) => (props.cart ? "16px" : "14px")};
+  font-size: ${(props) => (props.cart ? "18px" : "16px")};
   font-weight: 600;
   line-height: 1.2;
   display: -webkit-box;
@@ -70,10 +71,11 @@ export const CourseDemoGraphic = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 5px;
 `;
 
 export const Author = styled.p`
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   color: darklategray;
   margin: 0;

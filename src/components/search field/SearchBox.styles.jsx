@@ -21,7 +21,7 @@ export const SearchButton = styled.button`
   min-height: 40px;
   font-size: 14px;
   font-weight: bold;
-  background-color: #0014ff;
+  background-color: #D24916;
   color: white;
   cursor: pointer;
   border: none;

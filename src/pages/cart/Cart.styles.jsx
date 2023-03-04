@@ -76,7 +76,7 @@ export const CheckoutButton = styled.button`
   cursor: pointer;
   font-size: 22px;
   font-weight: 600;
-  background-color: #0014ff;
+  background-color: #D24916;
   border: none;
   outline: none;
   border-radius: 7px;

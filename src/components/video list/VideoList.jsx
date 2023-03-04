@@ -19,11 +19,6 @@ const VideoList = ({ id, player, videoName }) => {
   const listRef = ref(storage, `courses/${id}`);
 
   useEffect(() => {
-    window.localStorage.setItem(
-      "token",
-      "0c2d6894-7828-4ec3-a6c7-f68d8c3a86d2"
-    );
-
     const getVideos = async () => {
       setVideoDetails([]);
       listAll(listRef)
@@ -59,7 +54,7 @@ const VideoList = ({ id, player, videoName }) => {
       videoDetails.sort((a, b) => a.createdAt - b.createdAt);
     };
     sortData();
-  }, [id, listRef, storage, videoDetails]);
+  }, [id]);
 
   return (
     <VideoSection player={player}>

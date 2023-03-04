@@ -4,7 +4,10 @@ import {
   Home,
   Info,
   Inventory,
+  
 } from "@mui/icons-material";
+import StoreMallDirectoryIcon from '@mui/icons-material/StoreMallDirectory';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import React, { useContext, useState } from "react";
@@ -24,7 +27,7 @@ import {
   NavigationSection,
 } from "./Navigation.styles";
 
-const Navigation = ({ direction, visible }) => {
+const Navigation = ({ direction, visible , user }) => {
   const { setSidebarOpen } = useContext(SidebarContext);
   const [expanded, setExpanded] = useState(false);
 
@@ -159,10 +162,20 @@ const Navigation = ({ direction, visible }) => {
 
       <NavLink to={"/products"} onClick={closeSideBar}>
         <LinkSection>
-          <Contacts />
+          <StoreMallDirectoryIcon />
           STORE
         </LinkSection>
       </NavLink>
+      {
+        user?.role === "Admin" ?
+      <NavLink to={"/admin"} onClick={closeSideBar}>
+        <LinkSection>
+          <DashboardIcon />
+          DASHBOARD
+        </LinkSection>
+      </NavLink>
+      :null
+      }
     </NavigationSection>
   );
 };

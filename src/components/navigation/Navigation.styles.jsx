@@ -18,11 +18,11 @@ export const NavigationSection = styled.div`
     }
   }
   a:hover {
-    color: blue;
+    color: #D24916;
   }
   a.active {
     font-weight: 700;
-    color: black;
+    color: #D24916;
   }
 
   @media (max-width: 1060px) {
@@ -107,7 +107,7 @@ export const List = styled.li`
   height: 100%;
   font-size: 16px;
   &:hover {
-    color: blue;
+    color: #D24916;
   }
 `;
 

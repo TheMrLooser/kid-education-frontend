@@ -108,6 +108,7 @@ export const Desc = styled.p`
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
+  max-height: 150px;
 `;
 
 export const CancelIconStyle = {

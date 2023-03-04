@@ -140,6 +140,7 @@ const Admin = () => {
               onClick={() => handleOpen(params.row.id)}
               sx={deleteStyles}
             />
+
             <Link to={`/admin/course/${params.row.id}/video?tab=upload`}>
               <VideoLibrary sx={videoLibraryStyles} />
             </Link>

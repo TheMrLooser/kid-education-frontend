@@ -116,6 +116,8 @@ export const SectionHeading = styled.h1`
   line-height: 1.3;
   margin: 0 0 15px;
   text-align: center;
+  color: #D24916;
+
 
   @media (max-width: 768px) {
     font-size: 26px;
@@ -175,7 +177,7 @@ export const InputField = styled.input`
   background: transparent;
   font-size: 15px;
   font-weight: 400;
-  border: 1px solid darkgray;
+  border: 1px solid #262626;
   padding: 5px 10px;
   font-family: "Poppins", sans-serif;
 `;
@@ -186,7 +188,7 @@ export const FormButton = styled.button`
   border-radius: 7px;
   outline: none;
   border: none;
-  background-color: #0014ff;
+  background-color: #D24916;
   color: white;
   font-size: 16px;
   font-weight: 500;

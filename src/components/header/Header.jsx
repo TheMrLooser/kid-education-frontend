@@ -54,11 +54,12 @@ const Header = ({ user }) => {
     window.location.reload();
   };
 
+
   return (
     <Container>
       <GlobalStyles />
       <Wrapper>
-        {user !== "admin" ? (
+        {user !== "Admin" ? (
           <>
             <LogoSection>
               <MenuSection>
@@ -69,11 +70,11 @@ const Header = ({ user }) => {
               </Link>
             </LogoSection>
 
-            <Navigation direction="row" />
+            <Navigation direction="row" user={User} />
           </>
         ) : (
           <AdminHeadingSection>
-            <AdminHeading>Dashboard</AdminHeading>
+            <AdminHeading>Dashboard</AdminHeading> 
           </AdminHeadingSection>
         )}
         <UserSection>
