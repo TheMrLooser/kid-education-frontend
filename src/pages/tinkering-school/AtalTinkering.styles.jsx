@@ -22,11 +22,11 @@ export const StyledDesc = styled(SectionDesc)`
 
 export const ExpertiseSection = styled.div`
   padding: 7px;
-  background-color: #bccef8;
+  background-color: skyblue;
   border-radius: 20px;
   display: flex;
   gap: 10px;
-  color: darkblue;
+  color: black;
   justify-content: space-around;
 `;
 
@@ -112,7 +112,7 @@ export const ServiceDesc = styled.p`
 export const EnquireButton = styled.a`
   width: 100%;
   max-width: 200px;
-  background-color: darkblue;
+  background-color: black;
   padding: 10px;
   border: none;
   font-size: 16px;

@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   height: 100vh;
   display: grid;
   place-items: center;
-  background: #0d4c92;
+  background:whitesmoke;
 `;
 
 export const LoginWrap = styled.div`
@@ -24,7 +24,7 @@ export const LoginWrap = styled.div`
 
 export const IllustrationSection = styled.div`
   flex: 1;
-  background-color: #00abb3;
+  background-color:  #F5A00C;
 
   @media (max-width: 768px) {
     display: none;

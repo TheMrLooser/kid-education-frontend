@@ -31,7 +31,7 @@ const Details = () => {
           <RightSection>
             <DetailsSection>
               <DetailsInfo>
-                <SectionHeading>What We Offer</SectionHeading>
+                <SectionHeading> Our Offerings</SectionHeading>
                 <SectionDesc>
                   In order to make children and students lifelong learners, we
                   aim to help schools, educators, and parents achieve effective

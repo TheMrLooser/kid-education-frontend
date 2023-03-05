@@ -50,7 +50,7 @@ export const ProsImageSection = styled.div`
   flex: 1;
   display: grid;
   place-items: center;
-
+  
   &:hover ~ ${ProsDetailSection} {
     display: flex;
     flex-direction: column;
@@ -67,6 +67,7 @@ export const ProsImage = styled.img`
 export const ProsTitle = styled.h1`
   font-size: 14px;
   text-align: center;
+  color:#fa500c;
 `;
 export const ProsDesc = styled.p`
   font-size: 13px;

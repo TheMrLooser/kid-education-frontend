@@ -19,32 +19,31 @@ const Home = () => {
   const [video, setVideo] = useState([]);
 
   const storage = getStorage(app);
-  window.scrollTo(0, 0);
   const { setLoading, setAuthentication, isAuthenticated, User } =
-    useContext(Authentication);
-
+  useContext(Authentication);
+  
   const CTAHeading =
-    "Each student needs something different to shine. Let's find out together.";
+  "Each student needs something different to shine. Let's find out together.";
   const CTACall = "Get Started";
-
+  
   const [popularCourses, setPopularCourses] = useState(null);
   useEffect(() => {
     getDownloadURL(ref(storage, "assets/HOME/HOME VIDEO.mp4")).then((url) => {
       setVideo(url);
     });
-
+    
     const getPopularCourses = async () => {
       const res = await GetPopularCourseAPI();
       setPopularCourses(res.data.courses);
     };
     getPopularCourses();
+    window.scrollTo(0, 0);
   }, [storage]);
 
   useEffect(() => {
     if (window.localStorage.getItem("token")) {
       setLoading(true);
       setAuthentication(true);
-      console.log(isAuthenticated);
     }
   }, [isAuthenticated, setAuthentication, setLoading]);
 
