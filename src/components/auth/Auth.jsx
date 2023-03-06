@@ -112,7 +112,7 @@ const Auth = ({ method, register, handleSubmit, onSubmit, errors }) => {
                   
                 </Notice>
                 <Break>
-                    Back to home ->
+                    Back to home {'->'}` 
                     <Link to="/">home</Link>
                 </Break>
               </NoticeSection>
